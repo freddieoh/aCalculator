@@ -10,12 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var displayLabel: UILabel!
+  
+  var userIsTyping = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+
   }
-  
 
   @IBAction func touchDigit(_ sender: UIButton) {
     
@@ -23,7 +25,19 @@ class ViewController: UIViewController {
       print("No title for button")
       return
     }
-    print("\(digit) was pressed")
+    
+    guard let textInCurrentDisplay = displayLabel.text else {
+        print("No current text in display")
+        return
+    }
+    
+    if userIsTyping {
+      displayLabel.text = textInCurrentDisplay + digit
+    } else {
+      displayLabel.text = digit
+      userIsTyping = true
+      print("User is typing")
+    }
   }
   
   
