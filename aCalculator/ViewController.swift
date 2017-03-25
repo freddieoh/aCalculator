@@ -19,9 +19,13 @@ class ViewController: UIViewController {
 
   @IBAction func touchDigit(_ sender: UIButton) {
     
-    print("Digit button pressed")
+    guard let digit = sender.currentTitle else {
+      print("No title for button")
+      return
+    }
+    print("\(digit) was pressed")
   }
   
-
+  
 }
 
