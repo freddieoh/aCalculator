@@ -20,17 +20,14 @@ class ViewController: UIViewController {
   }
 
   @IBAction func touchDigit(_ sender: UIButton) {
-    
     guard let digit = sender.currentTitle else {
       print("No title for button")
       return
     }
-    
     guard let textInCurrentDisplay = displayLabel.text else {
         print("No current text in display")
         return
     }
-    
     if userIsTyping {
       displayLabel.text = textInCurrentDisplay + digit
     } else {
@@ -40,6 +37,20 @@ class ViewController: UIViewController {
     }
   }
   
+
+  @IBAction func performPiOperation(_ sender: UIButton) {
+    userIsTyping = false
+    guard let mathematicalSymbol = sender.currentTitle else {
+      print("No π found")
+      return
+    }
+    switch mathematicalSymbol {
+    case "π":
+      displayLabel.text = String(Double.pi)
+    default:
+      break
+    }
+  }
   
 }
 
