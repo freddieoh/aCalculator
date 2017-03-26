@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F9506E91E885714000C8741 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9506E81E885714000C8741 /* CalculatorBrain.swift */; };
 		1FD454B41E87019F002D0A37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD454B31E87019F002D0A37 /* AppDelegate.swift */; };
 		1FD454B61E87019F002D0A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD454B51E87019F002D0A37 /* ViewController.swift */; };
 		1FD454B91E87019F002D0A37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FD454B71E87019F002D0A37 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F9506E81E885714000C8741 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 		1FD454B01E87019F002D0A37 /* aCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FD454B31E87019F002D0A37 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1FD454B51E87019F002D0A37 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 		1FD454D61E8701E1002D0A37 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1F9506E81E885714000C8741 /* CalculatorBrain.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F9506E91E885714000C8741 /* CalculatorBrain.swift in Sources */,
 				1FD454B61E87019F002D0A37 /* ViewController.swift in Sources */,
 				1FD454B41E87019F002D0A37 /* AppDelegate.swift in Sources */,
 			);
@@ -442,6 +446,7 @@
 				1FD454CF1E87019F002D0A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1FD454D01E87019F002D0A37 /* Build configuration list for PBXNativeTarget "aCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +455,7 @@
 				1FD454D21E87019F002D0A37 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

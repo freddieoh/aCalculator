@@ -37,8 +37,16 @@ class ViewController: UIViewController {
     }
   }
   
+  var displayValue: Double {
+    get {
+        return Double(displayLabel.text!)!
+    }
+    set {
+      displayLabel.text = String(newValue)
+    }
+  }
 
-  @IBAction func performPiOperation(_ sender: UIButton) {
+  @IBAction func performOperation(_ sender: UIButton) {
     userIsTyping = false
     guard let mathematicalSymbol = sender.currentTitle else {
       print("No π found")
@@ -46,7 +54,9 @@ class ViewController: UIViewController {
     }
     switch mathematicalSymbol {
     case "π":
-      displayLabel.text = String(Double.pi)
+      displayValue = Double.pi
+    case "√":
+      displayValue = sqrt(displayValue)
     default:
       break
     }
