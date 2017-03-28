@@ -12,8 +12,20 @@ struct CalculatorBrain {
   
   private var accumulator: Double?
   
-  func performOperation(_ symbol: String) {
-
+  mutating func performOperation(_ symbol: String) {
+    switch symbol {
+    case "π":
+      accumulator = Double.pi
+    case "√":
+      guard let operand = accumulator else {
+        print("Operand not found")
+        return
+      }
+      accumulator = sqrt(operand)
+    default:
+      break
+    }
+    print("Guard is out")
   }
   
   mutating func setOperand(_ operand: Double) {

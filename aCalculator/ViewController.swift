@@ -9,24 +9,24 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+  
   @IBOutlet weak var displayLabel: UILabel!
   
   var userIsTyping = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
-
+    
   }
-
+  
   @IBAction func touchDigit(_ sender: UIButton) {
     guard let digit = sender.currentTitle else {
       print("No title for button")
       return
     }
     guard let textInCurrentDisplay = displayLabel.text else {
-        print("No current text in display")
-        return
+      print("No current text in display")
+      return
     }
     if userIsTyping {
       displayLabel.text = textInCurrentDisplay + digit
@@ -39,27 +39,32 @@ class ViewController: UIViewController {
   
   var displayValue: Double {
     get {
-        return Double(displayLabel.text!)!
+      return Double(displayLabel.text!)!
     }
     set {
       displayLabel.text = String(newValue)
     }
   }
-
+  
+  private var brain = CalculatorBrain()
+  
   @IBAction func performOperation(_ sender: UIButton) {
-    userIsTyping = false
+    if userIsTyping {
+      brain.setOperand(displayValue)
+      userIsTyping = false
+    }
     guard let mathematicalSymbol = sender.currentTitle else {
       print("No π found")
       return
     }
-    switch mathematicalSymbol {
-    case "π":
-      displayValue = Double.pi
-    case "√":
-      displayValue = sqrt(displayValue)
-    default:
-      break
+    
+    guard let result = brain.result else {
+      print("Result not found")
+      return
     }
+    
+    brain.performOperation(mathematicalSymbol)
+    displayValue = result
   }
   
 }
